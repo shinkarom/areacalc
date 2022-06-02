@@ -29,8 +29,8 @@ jobs:
     - run: npm ci
     - run: npm run build
 	- name: Deploy
-	  uses: peaceiris/actions-gh-pages@v3
-	  with:
-		github_token: ${{ secrets.GITHUB_TOKEN }}
-		publish_dir: ./build  # default: public
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build  # default: public
     - run: npm test --if-present
