@@ -28,9 +28,10 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - run: npm run build
+    - run: npm test --if-present
+
 	- name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./build  # default: public
-    - run: npm test --if-present
+        publish_dir: ./build
